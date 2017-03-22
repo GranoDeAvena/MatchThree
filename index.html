@@ -1,0 +1,93 @@
+<!DOCKTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Match three</title>
+	<link rel="stylesheet" type="text/css" href="mycss.css">
+</head>
+<body>	
+	<div>	
+		
+		<div id="match_three" style="position: absolute;">			
+			
+			<canvas class="main-canvas" id="glass-canvas" width="800" height="800"></canvas>
+			<canvas class="particle-canvas" id="particle-canvas" width="800" height="800"></canvas>
+			<canvas class="ui-canvas" id="ui-canvas" width="800" height="800" style="touch-action: none;"></canvas>
+
+			
+
+		</div>
+
+		<div id='blocks'> </div>
+
+
+		<div id="play-screen" style=" display: none; left: 680px; position: absolute;">	
+
+
+			<span  id="score-label" style=" color: red; top: 100px; ">Score: 0 </span>
+
+			<span  id="label" style=" color: red; top: 350px;">22</span>
+
+			<button id="restart-inplay-button" style=" top: 160px;">Restart</button>			
+
+			<div style="top: 270px; position: inherit; font-size: 2em;">Звук 
+				<label class="switch" style="top: 5px;">
+				  	<input type="checkbox" id='toggle'>
+				    <div class="slider round"></div>
+				</label>
+			</div>
+
+
+		</div>
+
+
+
+		<div id="gameover-screen" style=" display: none; left: 680px; position: absolute;">
+			
+			<span style=" color: blue;">Game over</span>
+			
+			<span id="scored-label" style=" color: red; top: 60px;"></span>
+
+			<button id="restart-button" style=" top: 100px;">Restart</button>
+
+		</div>
+
+
+
+		<div id="start-screen" style="left: 680px; position: absolute;">
+
+			<span id="title" >Match three</span>
+
+			<span id="pause-label" style=" color: red; top: 350px;"></span>
+
+
+			<button id="start-button" style=" top: 100px;">Start</button>			
+
+		</div>
+
+		
+	</div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+	
+	<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>	
+	<script src="scripts/soundjs-0.6.2.min.js"></script>
+	
+	<script src="scripts/particle_manager.js"></script>	
+	<script src="scripts/render.js"></script>
+	<script src="scripts/controller.js"></script>	
+	
+	<script src="scripts/main.js"></script>	
+
+	<script src="scripts/asset_manager.js"></script>	
+	
+	
+	<script src="scripts/block.js"></script>	
+	<script src="scripts/particle.js"></script>	
+	<script src="scripts/colors.js"></script>	
+	<script src="scripts/utils.js"></script>	
+	<script src="scripts/sound.js"></script>	
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script src="scripts/ui.js"></script> 
+	
+</body>
