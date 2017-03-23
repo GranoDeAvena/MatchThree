@@ -28,9 +28,9 @@ function AssetManager () {
 		if ( a.length < min[ _type] )
 			min[ _type] = a.length;
 
-		if (a.length < 70) {
+		if (a.length < 50) {
 			
-			if (a.length < 40)
+			if (a.length < 20)
 				console.info ('!! "' + _type + '" = ' + a.length);
 			else
 				console.info ('! "' + _type + '" = ' + a.length);		

@@ -1,6 +1,6 @@
 function MatchThree (){
 	
-	var GLASS_WIDTH = 7, GLASS_HEIGHT = 10;
+	var GLASS_WIDTH = 5, GLASS_HEIGHT = 8;
 	var RECT_WIDTH = 80;
 	var GLASS_HEIGHT_PIX = RECT_WIDTH * GLASS_HEIGHT;
 	
@@ -166,8 +166,9 @@ function MatchThree (){
 			render.clearGlass();
 		}
 
-		fillGlass ();  
-
+		fillGlass (); 
+	
+	
 		if (checkLines(true).length > 0 || checkEndGame()) {
 			this.restartGame();
 		}
@@ -194,13 +195,13 @@ function MatchThree (){
         checkDefoultValue(null);*/
 	}	
 
-	function arrChange (arr) {
+	/*function arrChange (arr) {
 		arr.push (4, 5);
 	}
 
 	function checkDefoultValue (v = 5) {
 		console.log ('def value = ' + v);
-	}
+	}*/
 
 
 
@@ -396,8 +397,8 @@ function MatchThree (){
 			return true;
 		}
 
-		//if (checkEndGame()) // Если блоков нет, проверить на окончание игры !!!!!!!!!!!!!!!!!
-		//	gameOver();
+		if (checkEndGame()) // Если блоков нет, проверить на окончание игры !!!!!!!!!!!!!!!!!
+			gameOver();
 	}
 
 
@@ -493,7 +494,7 @@ function MatchThree (){
         	for (var bx = x + offset; bx > x + offset - num; bx--) {  // Для всех блоков одного цвета в линии
 				//console.log ('add block ' + bx + ', ' + y);
 				blocks.push ( glass[y][bx] );
-		    	if ( num == 4 && !bonus && ! onlyCheck)  // если есть 4 блока в ряд и бонуса еще не было       
+		    	if ( num >= 4 && !bonus && ! onlyCheck)  // если есть 4 блока в ряд и бонуса еще не было       
 		    		if ( s_block_1 && (s_block_1.x == bx && s_block_1.y == y  ||  // если этот блок был свайпнут или он последний
 		    						   s_block_2.x == bx && s_block_2.y == y) ||(bx == x + offset - num + 1) ) {
 
@@ -549,7 +550,7 @@ function MatchThree (){
 				else {
 					blocks.push ( glass[by][x] );
 
-			    	if ( num == 4 && !bonus && ! onlyCheck)  // если есть 4 блока в ряд и бонуса еще не было       
+			    	if ( num >= 4 && !bonus && ! onlyCheck)  // если есть 4 блока в ряд и бонуса еще не было       
 			    		if ( s_block_1 && (s_block_1.x == x && s_block_1.y == by  ||  // если этот блок был свайпнут или он последний
 			    						   s_block_2.x == x && s_block_2.y == by) || (by == y + offset - num + 1) ) {
 
@@ -697,7 +698,7 @@ function MatchThree (){
 				}
 			}
 		}
-		//console.log ('i = ' + i);
+		console.log ('i = ' + i);
 		if (i == 0)
 			return true;
 		return false;
@@ -721,7 +722,7 @@ function MatchThree (){
 		state.stateGameover (states.gameover);	
 
 		render.drawGameOver();
-		//console.log ('game over');
+		console.log ('game over');
 
 		/*removeEventListener ("keydownleft",  function(evt) {onKeyDownLeft (evt)} );
 		removeEventListener ("keydownup",  function(evt) {onKeyDownUp (evt)} );

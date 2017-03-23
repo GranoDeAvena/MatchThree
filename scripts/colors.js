@@ -6,10 +6,10 @@ function getRandomColor () {
 }
 
 
-var red = 'red';
-var purple = 'purple';
-var yellow = 'yellow';
-var blue = 'blue';
-var green = 'green';
+var red = 'RED';
+var purple = 'PURPLE';
+var yellow = 'YELLOW';
+var blue = 'BLUE';
+var green = 'GREEN';
 
 var colors = [red, purple, yellow, blue, green];
